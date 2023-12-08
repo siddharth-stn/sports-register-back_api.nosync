@@ -15,7 +15,9 @@ mongoose.set("strictQuery", false);
 const mongoDB =
   "mongodb+srv://siddharth:sportsClusterPassword123@cluster0.u3fc6ms.mongodb.net/sports_data?retryWrites=true&w=majority";
 
-main().catch((err) => console.log(err));
+main()
+  .then(() => console.log("Database Connected Successfully"))
+  .catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB);
 }
