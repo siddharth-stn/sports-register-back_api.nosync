@@ -1,4 +1,6 @@
-const Schema = require("mongoose").Schema;
+const mongoose = require("mongoose");
+
+const Schema = mongoose.Schema;
 
 const SportSchema = new Schema({
   sport_name: { type: String, required: true },

@@ -1,6 +1,6 @@
-const { default: mongoose } = require("mongoose");
+const mongoose = require("mongoose");
 
-const Schema = require("mongoose").Schema;
+const Schema = mongoose.Schema;
 
 const TeamSchema = new Schema({
   team_name: { type: String, required: true },
@@ -9,6 +9,12 @@ const TeamSchema = new Schema({
   team_type: {
     type: String,
     enum: ["Boys", "Girls", "Mixed"],
+    required: true,
+  },
+  team_position_in_table: {
+    type: String,
+    enum: ["Winner", "Second", "Third", "RunnerUp"],
+    default: "RunnerUp",
     required: true,
   },
   house: {
