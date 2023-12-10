@@ -36,7 +36,9 @@ exports.session_create_post = [
       }).exec();
 
       if (sessionExists) {
-        res.status(400).json({ messgae: "Session exists in database" });
+        const err = new Error("Session exists in database");
+        errors.array().push(err);
+        res.status(400).json({ error: errors.array() });
       } else {
         await session.save();
         //! To write the code to redirect to Group Creation Page after this
