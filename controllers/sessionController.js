@@ -7,10 +7,10 @@ exports.session_list = (req, res, next) => {
 
 // Create a Session
 exports.session_create_post = (req, res, next) => {
-  res.send("Not Implemented: Session Create Post");
+  res.send("Not Implemented: Session Create on POST");
 };
 
 // Delete a Session
 exports.session_delete_post = (req, res, next) => {
-  res.send("Not Implemented: Session Delete Post");
+  res.send("Not Implemented: Session Delete on POST");
 };
