@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "devStart": "nodemon ./bin/www",
-    "serverStart": "DEBUG=sports-register-back_api.nosync:* npm run devStart"
+    "serverstart": "DEBUG=sports-register-back_api.nosync:* npm run devStart"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
