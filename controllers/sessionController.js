@@ -5,9 +5,10 @@ const Session = require("../models/session-model");
 const { body, validationResult } = require("express-validator");
 
 // Display list of Sessions
-exports.session_list = (req, res, next) => {
-  res.send("Not Implemented: Session List");
-};
+exports.session_list = asyncHandler(async (req, res, next) => {
+  const allSessions = await Session.find().exec();
+  res.status(200).json(allSessions);
+});
 
 // Handle Session Create on POST
 exports.session_create_post = [
