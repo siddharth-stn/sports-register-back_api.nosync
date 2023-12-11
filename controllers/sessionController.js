@@ -28,6 +28,7 @@ exports.session_create_post = [
     const session = new Session({ session: req.body.session });
 
     if (!errors.isEmpty()) {
+      // There are errors
       res.status(400).json({ errors: errors.array() });
     } else {
       // Data is valid
