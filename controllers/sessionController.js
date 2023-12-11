@@ -36,11 +36,20 @@ exports.session_create_post = [
       }).exec();
 
       if (sessionExists) {
-        const err = new Error("Session exists in database");
-        errors.array().push(err);
-        res.status(400).json({ error: errors.array() });
+        const err = [
+          ...errors.array(),
+          {
+            type: "custom",
+            value: req.body.session,
+            msg: "Session exists in database",
+            path: "session",
+            location: "body",
+          },
+        ];
+        res.status(400).json({ errors: err });
       } else {
         await session.save();
+        res.end("Data Saved Successfully");
         //! To write the code to redirect to Group Creation Page after this
       }
     }
