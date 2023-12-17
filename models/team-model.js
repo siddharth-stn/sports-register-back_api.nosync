@@ -20,8 +20,8 @@ const TeamSchema = new Schema({
   house: {
     type: String,
     required: true,
-    enum: ["Red", "Blue", "Green", "Yellow", "UnCat"],
-    default: "UnCat",
+    enum: ["Praestantia", "Phoenix", "Veritas", "Sapient", "uncat"],
+    default: "uncat",
   },
   player: [{ type: Schema.Types.ObjectId, ref: "Player", required: true }],
 });

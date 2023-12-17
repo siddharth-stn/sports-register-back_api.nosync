@@ -57,12 +57,10 @@ exports.sport_create_post = [
     } else {
       // Data is valid
       // Check if similar sport exists
-      const sportExists = await sport
-        .findOne({
-          sport_name: req.body.sport_name,
-          group: req.body.group,
-        })
-        .exec();
+      const sportExists = await Sport.findOne({
+        sport_name: req.body.sport_name,
+        group: req.body.group,
+      }).exec();
 
       if (sportExists) {
         const err = [
