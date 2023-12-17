@@ -32,6 +32,7 @@ const PlayerSchema = new Schema({
       "12-Ag",
       "12-Arts",
     ],
+    default: "Nur",
   },
 });
 
