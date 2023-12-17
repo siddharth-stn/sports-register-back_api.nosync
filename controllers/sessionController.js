@@ -44,7 +44,7 @@ exports.session_create_post = [
             type: "custom",
             value: req.body.session,
             msg: "Session exists in database",
-            path: "session",
+            path: "session/create",
             location: "body",
           },
         ];

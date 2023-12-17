@@ -49,7 +49,7 @@ exports.group_create_post = [
             type: "custom",
             value: req.body.group_name,
             msg: "Group already exists for this session",
-            path: "groups",
+            path: "group/create",
             location: "body",
           },
         ];
