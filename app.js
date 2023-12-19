@@ -3,12 +3,15 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var cors = require("cors");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var sportregisterRouter = require("./routes/sportregister");
 
 var app = express();
+
+app.use(cors());
 
 // Set up mongoose connection
 const mongoose = require("mongoose");
